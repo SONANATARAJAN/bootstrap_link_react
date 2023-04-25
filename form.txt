@@ -1,0 +1,77 @@
+login
+
+import React,{useState} from "react";
+
+export const Login =(props)=>{
+    const [email,setEmail]=useState('');
+    const [pass,setPass]=useState('');
+    const handSubmit =(e)=>{
+        e.preventDefault();
+        console.log(email);
+    }
+
+    return(
+        <div  class="container pt-2  my-2 border">
+        <form className="was-validated form-label " onSubmit={handSubmit}>
+             <div class="mb-3 mb-3">
+            <label value={email} onChange={(e)=>setEmail(e.target.value)} class=" form-label h3 " htmlfor="email">  email    </label>
+            <input class=" form-control " type="email" placeholder="vglug@gmail.com" id="email" name="email"/> 
+            </div>
+            <div className="mb-3">
+            <label class="form-label  h3"  htmlfor="password">   Password   </label>
+            <input value={pass} onChange={(e)=>setPass(e.target.value)} class=" form-control " type="password" placeholder="*******" id="password" name="password"/> <br />
+            </div>
+            <button className=" btn btn-primary " type="submit" >  Login   </button>
+            
+        </form>
+        <br />
+        <button onClick={()=>props.onFormSwitch('register')} class="btn btn-success" >Don't have an account? Register here.</button>
+        </div>
+    )
+}
+export default Login;
+
+
+register
+
+ import React,{useState} from 'react';
+
+export const Register =(props)=>{
+    const [email,setEmail]=useState('');
+    const [pass,setPass]=useState('');
+    const [name,setName]=useState('');
+
+    const handSubmit =(e)=>{
+        e.preventDefault();
+        console.log(email);
+    return(
+        <div  class="container pt-2  my-5 mx-5 border">
+        <form className="was-validated form-label " onSubmit={handSubmit}>
+        <div className="mb-3">
+            <label class="form-label  h3"  htmlfor="name">   Full Name   </label>
+            <input value={name} onChange={(e)=>setName(e.target.value)} class=" form-control " type="ur_name" placeholder="Enter your Name" id="ur_name" name="ur_ame"/> <br />
+            </div>
+
+            <div class="mb-3 mb-3">
+            <label value={email} onChange={(e)=>setEmail(e.target.value)} class=" form-label h3 " htmlfor="email">  email    </label>
+            <input class=" form-control " type="email" placeholder="vglug@gmail.com" id="email" name="email"/> 
+            </div>
+            <div className="mb-3">
+            <label class="form-label  h3"  htmlfor="password">   Password   </label>
+            <input value={pass} onChange={(e)=>setPass(e.target.value)} class=" form-control " type="password" placeholder="*******" id="password" name="password"/> <br />
+            </div>
+            <button className=" btn btn-primary " type="submit" >  Login   </button>
+            
+        </form>
+        <br />
+        <button onClick={()=>props.onFormSwitch('login')} class="btn btn-success" >Already have an account? Login here.</button>
+        </div>
+
+    )
+}
+}
+export default Register;
+
+
+
+container d-flex min-vh-100 justify-content-center align-items-center
